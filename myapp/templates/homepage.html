@@ -1,0 +1,26 @@
+<h2 align="center">Add New Data</h2>
+
+<form method="POST" enctype="multipart/form-data">
+    {% csrf_token %}
+
+    <center>{{product_form.as_p}}
+
+    <button>Submit</button>
+</form><br><br><br><br><br>
+
+
+<h2 align="center">Database</h2>
+
+    <table align="center" border="2">
+        <tr>
+            <th align="center">Product Name</th>
+            <th align="center">Product Brand</th>
+        </tr>
+
+        {% for i in product %}
+        <tr>
+            <td align="center">{{i.productname}}</td>
+            <td align="center">{{i.productbrand}}</td>
+        </tr>
+        {% endfor %}
+    </table>
